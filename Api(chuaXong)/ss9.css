@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body{
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* sử dụng linear-gradient két hợp vs độ trong suốt khác nhau*/
+    /* trong th này bg có 2 lớp: 1 là lớp overlay 2 là lớp ảnh 
+    lớp ảnh nằm dưới lớp overlay nằm trên và để ngăn cách 2 lớp này dùng "," 
+    Chỉ có linear-gradient mới có thể dùng lm lớp overplay đc còn dùng rgba thông thường thì ko đc*/
+    background:linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url(./img/winner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#weather{
+    width: 350px;
+    border-radius: 10px;
+    padding: 30px 20px;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(./img/winner.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.search{
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 0 15px 0px 15px;
+    /* box-shadow bo theo 1 đối tượng */
+    box-shadow: 0 5px 4px rgba(37, 37, 37, 0.1);
+    transition: 0.4s ease-in-out;
+    font-size: 18px;
+}
+
+/* này là sự kiện focus nó giống presudo hover*/
+.search:focus{
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px 0px 15px 0px;
+}
+
+.content{
+    text-align: center;
+    color: white;
+    margin: 35px 0;
+    
+}
+
+.content .capital{
+    /* text-shadow thì nó bo theo chữ */
+    /* thuộc tính cũng tương tự box-shadow */
+    text-shadow: 2px 2px 4px rgba(37, 37, 37, 0.3);
+}
+
+.content .time{
+    margin: 8px;
+    font-size: 15px;
+}
+
+.temperature{
+    font-size: 65px;
+    text-shadow: 4px 4px 5px rgba(37, 37, 37, 0.6);
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 5px 4px rgba(37, 37, 37, 0.1);
+    border-radius: 10px;
+    margin: 20px 30px;
+    padding-bottom: 15px;
+}
+
+.short-desc{
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(37, 37, 37, 0.3);
+    margin-bottom: 30px;
+}
+
+.more-desc{
+    display: flex;
+    justify-content: space-between;
+}
+
+.more-desc div{
+    display: flex;
+    flex-direction: column;
+}
+
+.more-desc div i{
+    margin: 8px 0;
+}

@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bai13.css">
+    <title>Preview Image</title>
+</head>
+<body>
+    <div class="container">
+        <!-- tăng vùng ấn cho user. Trog TH này khi click vào vùng label thì nó sẽ tương tự
+        như ấn vào thẻ input vì for đang chứa id của thẻ input -->
+        <label for="myPicture" class="preview"> 
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <span>Upload Image Preview</span>
+        </label>
+        <!-- nếu thể input có multiple thì nó sẽ cho phép upload
+        nhiều file nhưng ở đây mik chỉ cho phép upload and preview 1 file thôi-->
+        <input type="file" hidden id="myPicture">
+    </div>
+    <script src="./bai13.js"></script>
+    <script src="https://kit.fontawesome.com/8e591d1242.js" crossorigin="anonymous"></script>
+</body>
+</html>

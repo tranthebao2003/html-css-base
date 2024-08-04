@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    outline: none;
+}
+
+:root{
+    --success-color: #2691d9;
+    --error-color: #e74c3c;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(120deg, #3ca7ee, #9b408f);
+    overflow: hidden;
+    font-family: 'poppins';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 400px;
+    border:none;
+    border-radius: 10px;
+    background: #eaebeb;
+    padding: 40px;
+}
+
+.container h1{
+    text-align: center;
+}
+
+.form-control{
+    width: 100%;
+    position: relative;
+    margin-top: 30px;
+}
+
+.form-control input{
+    /* nó tạo khối là bởi vì màu bg của ô input và
+    màu bg của container khác nhau  */
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #adadad;
+    padding: 10px;
+}
+
+.form-control span{
+    position: absolute;
+    top: 39px;
+    left: 0;
+    width: 0%;
+    border-bottom: 2px solid var(--success-color);
+    transition: 0.4s ease-in-out;
+}
+
+.form-control input:focus~span{
+    /* khi focus vào input
+    thì tác động vào all phần tử span là phần 
+    tử đứng trx ngay trước phần tử input (cùng cấp) */
+    width: 100%;
+}
+
+.form-control.error small{
+    color: var(--error-color);
+}
+
+.form-control.error input{
+    border-bottom: 2px solid var(--error-color);
+}
+
+.btn-submit{
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--success-color);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 25px 0;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-submit:hover{
+    cursor: pointer;
+    background-color: #08609a;
+}
+
+.signUp-link{
+    text-align: center;
+}
+
+.signUp-link a{
+    text-decoration: none;
+    color: var(--success-color);
+    transition: 0.4s ease-in-out;
+}
+
+.signUp-link a:hover{
+    text-decoration:underline;
+    color: #08609a;
+}

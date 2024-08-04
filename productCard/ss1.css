@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@300;400;700&display=swap');
+/*import font ở ngoài vào */
+
+:root{
+    --primary-color: #4daf54;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(to right, #4daf54, #3d8880);
+    font-family: "Poppins";
+}
+
+.card{
+    margin: 120px auto; /* 120px trên dưới, còn auto là trái phải thì nó sẽ căn giữa theo triều ngang */ 
+    width: 320px;
+    height: 400px;
+    background: #272d40; /*màu của khối này */
+    padding: 20px; /*những thành phần bên trong sẽ cách viền 20px*/
+    border-radius: 15px; /* 4 viền cong 15px */
+    color: white; /*màu của các thành phần trong class (chữ, icon...) */
+    position: relative; /* relative: tương đối vị trí của nó phụ thuộc vào chính vị trí của nó hiện tại */
+}
+
+.card__heart, .card__cart{
+    font-size: 25px;
+    left: 20px;
+    top: 15px;
+    position: absolute; /* absolute: vị trí của nó phụ thuộc vào vị trí cha */    
+}
+
+.card__cart{
+    left: unset;
+    right: 20px;
+}
+
+.card__img{
+    width: 100%; /* nó đang chiếm 100% chiều rộng của thẻ cha là thẻ card*/
+    transition: 0.5s; /*những animation của thằng này sẽ diễn ra 0.5s*/
+    height: 200px; /* cho nó bằng kích thước tấm ảnh để nó ko bị tạo khoảng cách quá xa so vs card__title */
+}
+
+.card__img img{
+   width: 100%; /*tương tự nó cũng chiếm 100% chiều rộng của thẻ cha là thẻ card__img*/
+   height: 100%;
+   object-fit: cover; /*Hình ảnh giữ nguyên tỷ lệ, nhưng được thay đổi kích thước để vừa với kích thước đã cho ko bị cắt ảnh
+                        ngoài ra còn có cover: giữ nguyên tỉ lệ và lắp đầy kích thước nhưng ảnh có thể bị cắt
+                        fill: lắp đầy kịch thước ảnh ko bị cắt nhưng có thể lm méo ảnh*/    
+
+}
+
+.card__title,.card__price{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.card__title{
+    color: var(--primary-color);
+    line-height: 27px;
+}
+
+.card__price{
+    margin-bottom: 15px;
+}
+
+.card__size,.card__color{
+    display: flex;
+    align-items: center; /* nó sẽ căn giữa chiều vuông góc với trục main axis (xem lại hình nếu ko nhớ) */
+    margin-bottom: 8px;
+}
+
+.card__size span{
+    padding: 1px 10px;
+    background-color: #dadada;
+    font-weight: 500;
+    color: black; /*màu của chữ */
+    border-radius: 5px;
+    margin: 0 5px; /* trên dưới 0px và trái phải 5px*/
+    cursor: pointer;
+}
+
+.card__color span{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.card__size span:hover{ /*hover vào thẻ span thuộc class card__size */
+    background-color: #b0afaf;
+}
+
+.card__color span:hover{
+    transform: scale(1.3);
+}
+
+.card__color--green{
+    background: #1be128;
+}
+
+.card__color--red{
+    background: #e20d1f;
+}
+
+.card__color--black{
+    background: #1c1724;
+}
+
+.card__action button{
+    background-color: var(--primary-color);
+    border: none;
+    outline: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+button:hover{
+    transform: scale(0.9) ;
+}
+
+.card:hover .card__img{ /* khi ng dùng chạm vào card (hover) thì ngay lặp tức hiệu ứng sẽ áp dụng cho card__img */
+    transform: translateY(-95px) rotate(20deg);
+}
+
+.card:hover .card__title{
+    transform: translate(-38px, -70px);
+}
+
+.card:hover .card__price{ 
+    transform: translate(-116px, -72px);
+}
+
+.card__size{
+    margin-top: 150px;
+}
+.card__size, .card__color, .card__action{
+    visibility: hidden;
+    opacity: 0; /* để tính để tạo hoạt ảnh vs transition */
+    transition: 0.5s;
+}
+
+.card:hover .card__size,
+.card:hover .card__color,
+.card:hover .card__action{
+    visibility: visible;
+    opacity: 100%;
+    transition-delay: 0.4s; /*dùng để tránh bị giật giật vì chúng ta hover 2 lần vào card__size */
+}
+
+.card:hover .card__size{
+    margin-top: -35px;
+}

@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <!-- api: lấy dữ liệu từ 1 cơ sở dữ liệu -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <link rel="stylesheet" href="./ss9.css">
+    
+</head>
+<body>
+    <div id="weather">
+        <input type="text" class="search">
+        <div class="content">
+            <h1 class="capital">
+                <!-- ở đây city và country phải tách ra là vì
+                api nó chỉ đổ về country và city riêng chứ ko đổ về
+                1 string -->
+                <!-- này để thẻ span để nó khỏi xuống dòng còn để div
+                thì nó sẽ xuống dòng, vì span là inline còn div là block -->
+                <span class="city">Ha Noi</span>
+                <span>,</span>
+                <span class="country">VN</span>
+            
+            </h1>
+            <div class="time">12/24/2021, 3:25:16 PM</div>
+            <div class="temperature">
+                <!-- <sub>o</sub>: o này nằm phía dưới -->
+                <!-- <sup>o</sup>: o này nằm phía trên -->
+                <span class="value">23 <sup>o</sup>C</span>
+            </div>
+
+            <div class="short-desc">Clouds</div>
+            <div class="more-desc">
+                <!-- visibility: hiển thị -->
+                <div class="visibility">
+                    <i class="fa-regular fa-eye"></i>
+                    <span>10000m</span>
+                </div>
+
+                <div class="wind">
+                    <i class="fa-solid fa-wind"></i>
+                    <span>10000m</span>
+                </div>
+
+                <div class="sun">
+                    <i class="fa-regular fa-sun"></i>
+                    <span>10000m</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/8e591d1242.js" crossorigin="anonymous"></script>
+    <script src="./ss9.js"></script>
+</body>
+
+
+</html>

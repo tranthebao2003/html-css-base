@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: #dadada;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* căn giữa theo chiều ngag của body*/
+    align-items: center; /* căn giữa theo chiều dọc của body*/
+}
+
+.wrapper{
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap; 
+    /* flex-wrap: warp trong th nếu nó vượt quá kích thước bao bọc
+    cụ thể ở đây là 1200px thì nó sẽ xuông dòng nếu dùng wrap-reverse thì nó lên dòng */
+    justify-content: space-between;
+}   
+
+img{
+    /* width and height 100% object-position center nghĩa là
+    tấm ảnh sẽ ở trung tâm khung and object-fit cover nghĩa là nó sẽ
+    bao luôn cái khung đó  */
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.image{
+    width: 22%;
+    height: 200px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.image:hover img{
+    transform: scale(1.2);
+}
+
+.gallery{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    pointer-events: none; /*mọi sự kiện trên gallery đều ko có tác dụng*/
+    transform: scale(0.8);
+    transition: 0.5s;
+}
+
+.close{
+    position: fixed;
+    top: 15px;
+    right: 25px;
+    font-size: 25px;
+}
+
+.close:hover{
+    color: rgb(194, 194, 194);
+}
+
+.control{
+    font-size: 35px;
+    color: rgba(255, 255, 255, 0.8);
+    position: absolute; /*đều tuân theo thằng lớp phủ*/
+}
+
+.control:hover{
+    color: rgba(203, 203, 203, 0.8);
+}
+
+.control.prev{
+    left: 15px;
+}
+
+.control.next{
+    right: 15px;
+}
+
+.gallery__inner{
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    opacity: 1;
+    pointer-events: auto; /*tự động nhận event*/
+    transform: scale(1);
+}

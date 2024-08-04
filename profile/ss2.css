@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;700;900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #f2726a;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(45deg, #00853e, #50c878);
+    display: flex;
+    justify-content: center; /* căn giữa trục main-axis */
+    align-items: center; /* căn giữa trục cross-axis (trục vuông góc với main-axis */
+    font-family: "Poppins";
+    color: white;
+}
+
+.card{
+    background: #242628;
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center; /* để ảnh lúc nào cũng căn ra giữa */
+    
+}
+
+.card__img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    overflow: hidden; /* những con của thằng này mà vượt quá thằng này thì sẽ ẩn phần vượt quá đi */
+    margin: 0 auto;
+    transform: translateY(25px);
+    transition: 0.5s;
+}
+.card h2{
+    margin-top: 30px;
+}
+
+.card p{
+    color: var(--primary-color);
+}
+
+.card__social{
+    margin: 25px 0;
+}
+
+.card__social a{
+    color: white;
+    margin: 0px 20px;
+    font-size: 20px;
+}
+
+.card__social a:hover{
+    color: var(--primary-color);
+}
+
+.card button{
+    width: 100px;
+    height: 40px;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    background: transparent; /* nền trong suốt */
+    color: white;
+    transition: 0.5s;
+}
+
+.card button:hover{
+    background-color: var(--primary-color);
+}
+
+.card__img:hover{
+    width: 100%;
+    height: 100%;
+    border-radius: unset; /* bỏ đi hiệu ứng border-radius */
+    transform: unset;
+    border: none;
+}

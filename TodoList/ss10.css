@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(to right, #ffe000, #799f0c);
+    font-family: sans-serif;
+}
+
+.container{
+    width: 400px;
+    margin: 100px auto;
+    background: white;
+    padding-top: 5px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+form{
+    border-bottom: 1px solid black;
+    padding: 10px 20px;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+}
+
+form input{
+    font-size: 20px;
+    width: 100%;
+    margin-right: 15px;
+    border: none;
+}
+
+form button{
+    background: yellowgreen;
+    padding: 5px 15px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    transition: 0.3s ease-in-out;
+}
+
+form button:hover{
+    background: rgb(178, 227, 80);
+    cursor: pointer;
+}
+
+.todos{
+    list-style: none;
+}
+
+.todos li{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e5e5;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.todos li:hover{
+    background: #e5e5e5;
+}
+
+.todos li span{
+    white-space: nowrap; /* ko cho phép văn bản xuống dòng tự động */
+    overflow: hidden; /* nếu nó vượt ra khỏi phần tử cha thì bị ẩn đi */
+    /*text-overflow: ellipsis Khi văn bản không thể hiển thị đầy đủ trong một phần tử được giới hạn kích thước,
+    giá trị này sẽ thêm vào cuối văn bản một ký tự dấu chấm ba (...) để chỉ ra
+    rằng có thêm nội dung được ẩn, nó phải đi vs overflow: hidden */
+    text-overflow: ellipsis; 
+}
+
+/* select thẻ li có class completed */
+li.completed{
+    color: #aaa;
+}
+
+li.completed span{
+    text-decoration: line-through;
+}
